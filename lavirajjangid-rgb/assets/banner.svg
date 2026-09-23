@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" role="img" aria-label="Laviraj Jangid - Electrical Engineering, IoT, Robotics">
+  <defs>
+    <!-- animated RGB edge -->
+    <linearGradient id="bEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2d55">
+        <animate attributeName="stop-color" values="#ff2d55;#ff9500;#00ff9d;#00d4ff;#b026ff;#ff2d55" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#00d4ff">
+        <animate attributeName="stop-color" values="#00d4ff;#b026ff;#ff2d55;#ff9500;#00ff9d;#00d4ff" dur="9s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00ff9d">
+        <animate attributeName="stop-color" values="#00ff9d;#00d4ff;#b026ff;#ff2d55;#ff9500;#00ff9d" dur="9s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- animated RGB title -->
+    <linearGradient id="bTitle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2d55">
+        <animate attributeName="stop-color" values="#ff2d55;#ff9500;#00ff9d;#00d4ff;#b026ff;#ff2d55" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#00d4ff">
+        <animate attributeName="stop-color" values="#00d4ff;#ff2d55;#b026ff;#00ff9d;#ff9500;#00d4ff" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00ff9d">
+        <animate attributeName="stop-color" values="#00ff9d;#00d4ff;#ff9500;#b026ff;#ff2d55;#00ff9d" dur="7s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <radialGradient id="bRed"><stop offset="0%" stop-color="#ff2d55" stop-opacity="0.75"/><stop offset="100%" stop-color="#ff2d55" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bGrn"><stop offset="0%" stop-color="#00ff9d" stop-opacity="0.75"/><stop offset="100%" stop-color="#00ff9d" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bBlu"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.75"/><stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="bSurge"><stop offset="0%" stop-color="#b026ff" stop-opacity="0.55"/><stop offset="100%" stop-color="#b026ff" stop-opacity="0"/></radialGradient>
+
+    <linearGradient id="bScan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="bChip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff2d55" stop-opacity="0.16"/>
+      <stop offset="50%" stop-color="#00d4ff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.16"/>
+    </linearGradient>
+
+    <pattern id="bGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#141b36" stroke-width="1"/>
+    </pattern>
+
+    <filter id="bBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="46"/></filter>
+    <filter id="bSoft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="bGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="bClip"><rect x="2" y="2" width="996" height="316" rx="26"/></clipPath>
+  </defs>
+
+  <!-- base -->
+  <rect x="2" y="2" width="996" height="316" rx="26" fill="#05060f"/>
+  <g clip-path="url(#bClip)">
+    <rect width="1000" height="320" fill="url(#bGrid)" opacity="0.5"/>
+    <rect width="1000" height="320" fill="url(#bGrid)" opacity="0">
+      <animate attributeName="opacity" values="0;0;0.55;0" keyTimes="0;0.86;0.9;1" dur="9s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- drifting RGB aurora blobs -->
+    <g filter="url(#bBlur)" opacity="0.55">
+      <circle cx="180" cy="90" r="150" fill="url(#bRed)">
+        <animate attributeName="cx" values="180;320;180" dur="14s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="90;160;90" dur="11s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="500" cy="300" r="170" fill="url(#bBlu)">
+        <animate attributeName="cx" values="500;380;620;500" dur="17s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="840" cy="80" r="150" fill="url(#bGrn)">
+        <animate attributeName="cx" values="840;700;840" dur="13s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="80;190;80" dur="15s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- power surge that pulses through the board every 9s -->
+    <circle cx="500" cy="160" r="300" fill="url(#bSurge)" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0" keyTimes="0;0.86;0.91;1" dur="9s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- circuit traces (current flow + surge boost) -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M-10,60 H140 V130 H230" stroke="#ff2d55" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="14 10">
+        <animate attributeName="stroke-dashoffset" values="0;-240" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.5;0.5;1;0.5" keyTimes="0;0.86;0.91;1" dur="9s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-10,120 H90 V210 H200 V250" stroke="#00d4ff" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="16 12">
+        <animate attributeName="stroke-dashoffset" values="0;240" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.45;0.45;0.95;0.45" keyTimes="0;0.86;0.91;1" dur="9s" repeatCount="indefinite"/>
+      </path>
+      <path d="M1010,70 H870 V140 H780" stroke="#00ff9d" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="14 10">
+        <animate attributeName="stroke-dashoffset" values="0;-240" dur="6.5s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.5;0.5;1;0.5" keyTimes="0;0.86;0.91;1" dur="9s" repeatCount="indefinite"/>
+      </path>
+      <path d="M1010,235 H900 V180 H790 V120" stroke="#b026ff" stroke-opacity="0.45" stroke-width="2" stroke-dasharray="18 12">
+        <animate attributeName="stroke-dashoffset" values="0;240" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.45;0.45;0.95;0.45" keyTimes="0;0.86;0.91;1" dur="9s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- pulsing solder pads -->
+    <g filter="url(#bGlow)">
+      <circle cx="230" cy="130" r="4" fill="#ff2d55"><animate attributeName="r" values="3;6;3" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/></circle>
+      <circle cx="200" cy="250" r="4" fill="#00d4ff"><animate attributeName="r" values="6;3;6" dur="2.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.4;1" dur="2.8s" repeatCount="indefinite"/></circle>
+      <circle cx="780" cy="140" r="4" fill="#00ff9d"><animate attributeName="r" values="3;6;3" dur="2.5s" repeatCount="indefinite"/></circle>
+      <circle cx="790" cy="120" r="4" fill="#b026ff"><animate attributeName="r" values="5;2.5;5" dur="3.1s" repeatCount="indefinite"/></circle>
+      <circle cx="140" cy="60" r="3" fill="#ff9500"><animate attributeName="opacity" values="0.3;1;0.3" dur="1.9s" repeatCount="indefinite"/></circle>
+      <circle cx="870" cy="70" r="3" fill="#00d4ff"><animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- title with RGB chromatic split + surge flash -->
+    <g font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-weight="800" font-size="62" letter-spacing="4" text-anchor="middle">
+      <text x="497" y="154" fill="#ff2d55" opacity="0.75" filter="url(#bSoft)">LAVIRAJ JANGID</text>
+      <text x="503" y="154" fill="#00d4ff" opacity="0.75" filter="url(#bSoft)">LAVIRAJ JANGID</text>
+      <text x="500" y="154" fill="url(#bTitle)">LAVIRAJ JANGID</text>
+      <text x="500" y="154" fill="#ffffff" opacity="0">LAVIRAJ JANGID
+        <animate attributeName="opacity" values="0;0;0.4;0" keyTimes="0;0.88;0.91;1" dur="9s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- subtitle -->
+    <text x="500" y="192" text-anchor="middle" font-family="'Fira Code',Consolas,ui-monospace,monospace" font-size="14" letter-spacing="3.4" fill="#94a6cd">
+      ELECTRICAL ENGINEERING · B.TECH 2ND YEAR · JAIPUR, RAJASTHAN
+      <animate attributeName="fill" values="#94a6cd;#dfe8ff;#94a6cd" dur="6s" repeatCount="indefinite"/>
+    </text>
+
+    <!-- chips, glowing in sequence -->
+    <g font-family="'Fira Code',Consolas,ui-monospace,monospace" font-size="13" fill="#e6efff" text-anchor="middle">
+      <g>
+        <rect x="117" y="232" width="152" height="34" rx="17" fill="url(#bChip)" stroke="#ff2d55" stroke-opacity="0.7"/>
+        <rect x="117" y="232" width="152" height="34" rx="17" fill="none" stroke="#ff2d55" stroke-opacity="0">
+          <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="5s" begin="0s" repeatCount="indefinite"/></rect>
+        <text x="193" y="254">⚡ Circuits</text>
+      </g>
+      <g>
+        <rect x="283" y="232" width="140" height="34" rx="17" fill="url(#bChip)" stroke="#ff9500" stroke-opacity="0.7"/>
+        <rect x="283" y="232" width="140" height="34" rx="17" fill="none" stroke="#ff9500" stroke-opacity="0">
+          <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="5s" begin="0.5s" repeatCount="indefinite"/></rect>
+        <text x="353" y="254">🤖 Robotics</text>
+      </g>
+      <g>
+        <rect x="437" y="232" width="110" height="34" rx="17" fill="url(#bChip)" stroke="#00ff9d" stroke-opacity="0.7"/>
+        <rect x="437" y="232" width="110" height="34" rx="17" fill="none" stroke="#00ff9d" stroke-opacity="0">
+          <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="5s" begin="1s" repeatCount="indefinite"/></rect>
+        <text x="492" y="254">📡 IoT</text>
+      </g>
+      <g>
+        <rect x="561" y="232" width="152" height="34" rx="17" fill="url(#bChip)" stroke="#00d4ff" stroke-opacity="0.7"/>
+        <rect x="561" y="232" width="152" height="34" rx="17" fill="none" stroke="#00d4ff" stroke-opacity="0">
+          <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="5s" begin="1.5s" repeatCount="indefinite"/></rect>
+        <text x="637" y="254">🧠 C + Python</text>
+      </g>
+      <g>
+        <rect x="727" y="232" width="157" height="34" rx="17" fill="url(#bChip)" stroke="#b026ff" stroke-opacity="0.7"/>
+        <rect x="727" y="232" width="157" height="34" rx="17" fill="none" stroke="#b026ff" stroke-opacity="0">
+          <animate attributeName="stroke-opacity" values="0.55;1;0.55" dur="5s" begin="2s" repeatCount="indefinite"/></rect>
+        <text x="805" y="254">📣 Social Media</text>
+      </g>
+    </g>
+
+    <!-- travelling scanline -->
+    <rect x="0" y="0" width="1000" height="90" fill="url(#bScan)">
+      <animate attributeName="y" values="-90;320" dur="7s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- corners -->
+  <g stroke="url(#bEdge)" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M40,12 H12 V40"/><path d="M960,12 H988 V40"/><path d="M12,280 V308 H40"/><path d="M988,280 V308 H960"/>
+  </g>
+  <rect x="3" y="3" width="994" height="314" rx="25" fill="none" stroke="url(#bEdge)" stroke-width="3"/>
+</svg>
