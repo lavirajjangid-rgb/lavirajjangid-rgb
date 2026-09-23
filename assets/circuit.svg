@@ -1,0 +1,189 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-label="Circuit signal path: sensors, controller, driver, actuators and IoT layer lighting up in turn">
+  <defs>
+    <linearGradient id="cEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2d55"><animate attributeName="stop-color" values="#ff2d55;#ff9500;#00ff9d;#00d4ff;#b026ff;#ff2d55" dur="10s" repeatCount="indefinite"/></stop>
+      <stop offset="100%" stop-color="#00d4ff"><animate attributeName="stop-color" values="#00d4ff;#b026ff;#ff2d55;#ff9500;#00ff9d;#00d4ff" dur="10s" repeatCount="indefinite"/></stop>
+    </linearGradient>
+    <linearGradient id="cBox" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1024"/><stop offset="100%" stop-color="#111a38"/>
+    </linearGradient>
+    <radialGradient id="cAmb"><stop offset="0%" stop-color="#00d4ff" stop-opacity="0.22"/><stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="cPulse"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+    <filter id="cGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="26"/></filter>
+    <pattern id="cGrid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M25 0H0V25" fill="none" stroke="#121a33" stroke-width="1"/>
+    </pattern>
+    <clipPath id="cClip"><rect x="2" y="2" width="996" height="436" rx="22"/></clipPath>
+  </defs>
+
+  <rect x="2" y="2" width="996" height="436" rx="22" fill="#05060f"/>
+  <g clip-path="url(#cClip)">
+    <rect width="1000" height="440" fill="url(#cGrid)" opacity="0.65"/>
+    <circle cx="880" cy="60" r="180" fill="url(#cAmb)" filter="url(#cBlur)"/>
+    <circle cx="90" cy="400" r="180" fill="url(#cAmb)" filter="url(#cBlur)"/>
+
+    <!-- header -->
+    <text x="34" y="46" font-family="'Fira Code',Consolas,ui-monospace,monospace" font-size="17" font-weight="700" fill="#e8f0ff" letter-spacing="1.6">SIGNAL PATH : SENSE → THINK → ACT</text>
+    <text x="34" y="68" font-family="Consolas,ui-monospace,monospace" font-size="12" fill="#7f8fbb">each block lights up in turn · the dashes are live current</text>
+    <text x="966" y="46" text-anchor="end" font-family="Consolas,ui-monospace,monospace" font-size="12" fill="#5b6a95">rev.2026 / breadboard v1</text>
+    <line x1="24" y1="84" x2="976" y2="84" stroke="#1b2340"/>
+
+    <!-- wires with flowing current -->
+    <g fill="none" stroke-linecap="round" stroke-width="2.4">
+      <path d="M186,220 H256" stroke="#ff2d55" stroke-opacity="0.55" stroke-dasharray="12 9">
+        <animate attributeName="stroke-dashoffset" values="0;-210" dur="3.4s" repeatCount="indefinite"/></path>
+      <path d="M436,220 H506" stroke="#00ff9d" stroke-opacity="0.55" stroke-dasharray="12 9">
+        <animate attributeName="stroke-dashoffset" values="0;-210" dur="3.4s" begin=".4s" repeatCount="indefinite"/></path>
+      <path d="M686,220 H756" stroke="#00d4ff" stroke-opacity="0.55" stroke-dasharray="12 9">
+        <animate attributeName="stroke-dashoffset" values="0;-210" dur="3.4s" begin=".8s" repeatCount="indefinite"/></path>
+      <path d="M871,150 V120 H300 V132" stroke="#b026ff" stroke-opacity="0.55" stroke-dasharray="12 9">
+        <animate attributeName="stroke-dashoffset" values="0;-240" dur="5s" repeatCount="indefinite"/></path>
+      <path d="M300,308 V360 H871 V290" stroke="#ff9500" stroke-opacity="0.5" stroke-dasharray="12 9">
+        <animate attributeName="stroke-dashoffset" values="0;240" dur="5.6s" repeatCount="indefinite"/></path>
+    </g>
+
+    <!-- travelling signal packets -->
+    <g>
+      <circle r="5" fill="url(#cPulse)"><animateMotion dur="5s" repeatCount="indefinite" path="M186,220 H256 H436 H506 H686 H756 H871"/></circle>
+      <circle r="5" fill="url(#cPulse)"><animateMotion dur="5s" begin="2.5s" repeatCount="indefinite" path="M186,220 H256 H436 H506 H686 H756 H871"/></circle>
+    </g>
+
+    <!-- ══ BLOCK 1 : SENSORS ══ -->
+    <g>
+      <rect x="56" y="150" width="130" height="140" rx="14" fill="#ff2d55" opacity="0">
+        <animate attributeName="opacity" values="0;0.17;0.17;0;0" keyTimes="0;0.008;0.192;0.2;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="56" y="150" width="130" height="140" rx="14" fill="url(#cBox)" stroke="#ff2d55" stroke-opacity="0.35" stroke-width="1.8"/>
+      <rect x="56" y="150" width="130" height="140" rx="14" fill="none" stroke="#ff2d55" stroke-opacity="0" stroke-width="1.8">
+        <animate attributeName="stroke-opacity" values="0;1;1;0;0" keyTimes="0;0.008;0.192;0.2;1" dur="25s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.8;3.4;3.4;1.8;1.8" keyTimes="0;0.008;0.192;0.2;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <g filter="url(#cGlow)" fill="#ff2d55">
+        <circle cx="121" cy="188" r="7"/>
+        <circle cx="121" cy="188" r="14" fill="none" stroke="#ff2d55" stroke-opacity="0.5">
+          <animate attributeName="r" values="8;18;8" dur="2.4s" repeatCount="indefinite"/>
+          <animate attributeName="stroke-opacity" values="0.7;0;0.7" dur="2.4s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <text x="121" y="228" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="14" font-weight="700" fill="#ffdbe3">SENSORS</text>
+      <text x="121" y="248" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10.5" fill="#8e9dc6">DHT11 · IR · LDR</text>
+      <text x="121" y="264" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10.5" fill="#8e9dc6">Ultrasonic</text>
+      <text x="121" y="283" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10" fill="#ff2d55" opacity="0">↳ analog world in
+        <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.008;0.192;0.2;1" dur="25s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- ══ BLOCK 2 : CONTROLLER ══ -->
+    <g>
+      <rect x="256" y="140" width="180" height="160" rx="14" fill="#00ff9d" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.17;0.17;0;0" keyTimes="0;0.2;0.208;0.392;0.4;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="256" y="140" width="180" height="160" rx="14" fill="url(#cBox)" stroke="#00ff9d" stroke-opacity="0.35" stroke-width="1.8"/>
+      <rect x="256" y="140" width="180" height="160" rx="14" fill="none" stroke="#00ff9d" stroke-opacity="0" stroke-width="1.8">
+        <animate attributeName="stroke-opacity" values="0;0;1;1;0;0" keyTimes="0;0.2;0.208;0.392;0.4;1" dur="25s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.8;1.8;3.4;3.4;1.8;1.8" keyTimes="0;0.2;0.208;0.392;0.4;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="286" y="168" width="120" height="58" rx="6" fill="#07142a" stroke="#00ff9d" stroke-opacity=".6"/>
+      <g font-family="Consolas,ui-monospace,monospace" font-size="9.5" fill="#00ff9d">
+        <text x="346" y="182" text-anchor="middle">ESP32 / ARDUINO</text>
+        <text x="346" y="196" text-anchor="middle" fill="#8e9dc6">C / C++ firmware</text>
+        <text x="346" y="210" text-anchor="middle" fill="#8e9dc6">Python serial bridge</text>
+      </g>
+      <g stroke="#00ff9d" stroke-width="2">
+        <path d="M286,176 H272"/><path d="M286,192 H272"/><path d="M286,208 H272"/>
+        <path d="M406,176 H420"/><path d="M406,192 H420"/><path d="M406,208 H420"/>
+      </g>
+      <g fill="#00ff9d" filter="url(#cGlow)">
+        <circle cx="346" cy="240" r="3">
+          <animate attributeName="opacity" values="1;0.15;1" dur="1.6s" repeatCount="indefinite"/></circle>
+        <circle cx="362" cy="240" r="3">
+          <animate attributeName="opacity" values="1;0.15;1" dur="1.6s" begin="0.5s" repeatCount="indefinite"/></circle>
+        <circle cx="378" cy="240" r="3">
+          <animate attributeName="opacity" values="1;0.15;1" dur="1.6s" begin="1s" repeatCount="indefinite"/></circle>
+      </g>
+      <text x="346" y="264" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="14" font-weight="700" fill="#d7ffe9">CONTROLLER</text>
+      <text x="346" y="282" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10.5" fill="#8e9dc6">the brain · 3.3V logic</text>
+      <text x="346" y="296" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10" fill="#00ff9d" opacity="0">↳ code decides
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.2;0.208;0.392;0.4;1" dur="25s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- ══ BLOCK 3 : DRIVER ══ -->
+    <g>
+      <rect x="506" y="150" width="180" height="140" rx="14" fill="#00d4ff" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.17;0.17;0;0" keyTimes="0;0.4;0.408;0.592;0.6;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="506" y="150" width="180" height="140" rx="14" fill="url(#cBox)" stroke="#00d4ff" stroke-opacity="0.35" stroke-width="1.8"/>
+      <rect x="506" y="150" width="180" height="140" rx="14" fill="none" stroke="#00d4ff" stroke-opacity="0" stroke-width="1.8">
+        <animate attributeName="stroke-opacity" values="0;0;1;1;0;0" keyTimes="0;0.4;0.408;0.592;0.6;1" dur="25s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.8;1.8;3.4;3.4;1.8;1.8" keyTimes="0;0.4;0.408;0.592;0.6;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <g filter="url(#cGlow)">
+        <rect x="536" y="176" width="120" height="40" rx="5" fill="none" stroke="#00d4ff" stroke-width="1.6"/>
+        <circle cx="560" cy="196" r="4" fill="#00d4ff"/><circle cx="600" cy="196" r="4" fill="#00d4ff"/><circle cx="632" cy="196" r="4" fill="#00d4ff"/>
+      </g>
+      <text x="596" y="240" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="14" font-weight="700" fill="#d8f4ff">DRIVER</text>
+      <text x="596" y="258" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10.5" fill="#8e9dc6">L298N · MOSFET · relay</text>
+      <text x="596" y="278" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10" fill="#00d4ff" opacity="0">↳ low power → high power
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.4;0.408;0.592;0.6;1" dur="25s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- ══ BLOCK 4 : ACTUATORS ══ -->
+    <g>
+      <rect x="756" y="150" width="190" height="140" rx="14" fill="#b026ff" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.17;0.17;0;0" keyTimes="0;0.6;0.608;0.792;0.8;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="756" y="150" width="190" height="140" rx="14" fill="url(#cBox)" stroke="#b026ff" stroke-opacity="0.35" stroke-width="1.8"/>
+      <rect x="756" y="150" width="190" height="140" rx="14" fill="none" stroke="#b026ff" stroke-opacity="0" stroke-width="1.8">
+        <animate attributeName="stroke-opacity" values="0;0;1;1;0;0" keyTimes="0;0.6;0.608;0.792;0.8;1" dur="25s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.8;1.8;3.4;3.4;1.8;1.8" keyTimes="0;0.6;0.608;0.792;0.8;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <g filter="url(#cGlow)">
+        <circle cx="851" cy="192" r="22" fill="none" stroke="#b026ff" stroke-width="2" stroke-dasharray="6 6">
+          <animateTransform attributeName="transform" type="rotate" from="0 851 192" to="360 851 192" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="851" cy="192" r="7" fill="#b026ff"/>
+      </g>
+      <text x="851" y="238" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="14" font-weight="700" fill="#f0dcff">ACTUATORS</text>
+      <text x="851" y="256" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10.5" fill="#8e9dc6">motor · servo · LEDs</text>
+      <text x="851" y="276" text-anchor="middle" font-family="Consolas,ui-monospace,monospace" font-size="10" fill="#b026ff" opacity="0">↳ the robot moves
+        <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6;0.608;0.792;0.8;1" dur="25s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- ══ BLOCK 5 : IoT LAYER ══ -->
+    <g>
+      <rect x="256" y="300" width="615" height="86" rx="14" fill="#ff9500" opacity="0">
+        <animate attributeName="opacity" values="0;0;0.17;0.17;0" keyTimes="0;0.8;0.808;0.992;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="256" y="300" width="615" height="86" rx="14" fill="url(#cBox)" stroke="#ff9500" stroke-opacity="0.35" stroke-width="1.8"/>
+      <rect x="256" y="300" width="615" height="86" rx="14" fill="none" stroke="#ff9500" stroke-opacity="0" stroke-width="1.8">
+        <animate attributeName="stroke-opacity" values="0;0;1;1;0" keyTimes="0;0.8;0.808;0.992;1" dur="25s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.8;1.8;3.4;3.4;1.8" keyTimes="0;0.8;0.808;0.992;1" dur="25s" repeatCount="indefinite"/>
+      </rect>
+      <text x="286" y="332" font-family="Consolas,ui-monospace,monospace" font-size="13" font-weight="700" fill="#ffe7c9">IoT LAYER — Wi-Fi / MQTT → dashboard, alerts, data logging</text>
+      <text x="286" y="356" font-family="Consolas,ui-monospace,monospace" font-size="10.5" fill="#8e9dc6">NodeMCU · Blynk · ThingSpeak · Firebase · Telegram bot alerts</text>
+      <g filter="url(#cGlow)">
+        <circle cx="820" cy="327" r="4.5" fill="#ff9500">
+          <animate attributeName="opacity" values="1;0.2;1" dur="1.4s" repeatCount="indefinite"/></circle>
+        <circle cx="842" cy="327" r="4.5" fill="#00ff9d">
+          <animate attributeName="opacity" values="1;0.2;1" dur="1.4s" begin="0.7s" repeatCount="indefinite"/></circle>
+      </g>
+      <text x="286" y="378" font-family="Consolas,ui-monospace,monospace" font-size="10" fill="#ff9500" opacity="0">↳ every circuit gets a voice on the internet
+        <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.8;0.808;0.992;1" dur="25s" repeatCount="indefinite"/>
+      </text>
+    </g>
+
+    <!-- power rail -->
+    <g font-family="Consolas,ui-monospace,monospace" font-size="11" fill="#6d7ca8">
+      <line x1="24" y1="412" x2="976" y2="412" stroke="#1b2340"/>
+      <text x="34" y="430">5V / 3.3V RAIL</text>
+      <text x="966" y="430" text-anchor="end">GND — always double-check polarity</text>
+    </g>
+  </g>
+  <rect x="2" y="2" width="996" height="436" rx="22" fill="none" stroke="url(#cEdge)" stroke-width="2.5"/>
+</svg>
